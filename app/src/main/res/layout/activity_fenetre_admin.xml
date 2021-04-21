@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".EcranAdmin">
+
+    <Button
+        android:id="@+id/btnInterets"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtnInterets"
+        android:layout_marginVertical="10dp"
+        android:text="Paiement des intérêts" />
+
+    <Button
+        android:id="@+id/btnCheques"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtnCheques"
+        android:layout_marginVertical="10dp"
+        android:text="Comptes cheques" />
+
+    <Button
+        android:id="@+id/btnEpargnes"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBthEpargnes"
+        android:layout_marginVertical="10dp"
+        android:text="Comptes epargnes" />
+
+    <Button
+        android:id="@+id/btnClients"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtnClients"
+        android:layout_marginVertical="10dp"
+        android:text="Liste des clients" />
+
+    <Button
+        android:id="@+id/btnLogout"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClickBtnLogout"
+        android:layout_marginVertical="10dp"
+        android:text="Logout" />
+</LinearLayout>

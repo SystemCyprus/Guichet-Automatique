@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GuichetAutomatique</string>
+
+    <string name="strNom">Nom : </string>
+    <string name="strPrenom">Prenom : </string>
+    <string name="strCompte">Numero de compte : </string>
+    <string name="strSolde">Solde du compte : </string>
+</resources>

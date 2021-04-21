@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".EcranPrincipal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="62dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tvBonjour"
+            android:layout_width="248dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:paddingLeft="5dp"
+            android:text="Bonjour Android ATM"
+            android:textSize="18sp" />
+
+        <Button
+            android:id="@+id/btnLogout"
+            android:layout_width="107dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickBtnLogout"
+            android:text="Logout" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn0"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtn0"
+            android:text="0" />
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtn1"
+            android:text="1" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtn2"
+            android:text="2" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtn3"
+            android:text="3" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn4"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtn4"
+            android:text="4" />
+
+        <Button
+            android:id="@+id/btn5"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtn5"
+            android:text="5" />
+
+        <Button
+            android:id="@+id/btn6"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtn6"
+            android:text="6" />
+
+        <Button
+            android:id="@+id/btn7"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtn7"
+            android:text="7" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn8"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtn8"
+            android:text="8" />
+
+        <Button
+            android:id="@+id/btn9"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtn9"
+            android:text="9" />
+
+        <Button
+            android:id="@+id/btnPoint"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtnPoint"
+            android:text="." />
+
+        <Button
+            android:id="@+id/btnC"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:layout_weight="1"
+            android:onClick="onClickBtnC"
+            android:text="C" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvMontant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:paddingHorizontal="20dp"
+        android:text="0.00"
+        android:textAlignment="center"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="154dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/rgOperation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/rbDepot"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Dépot" />
+
+                <RadioButton
+                    android:id="@+id/rbRetrait"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Retrait" />
+
+                <RadioButton
+                    android:id="@+id/rbVirement"
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:text="Virement" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/rgCompte"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <RadioButton
+                    android:id="@+id/rbCheque"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="Chèques" />
+
+                <RadioButton
+                    android:id="@+id/rbEpargne"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:text="Épargne" />
+            </RadioGroup>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnEtat"
+            android:layout_width="190dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="35dp"
+            android:layout_weight="1"
+            android:onClick="onClickEtatComptes"
+            android:text="État des comptes" />
+
+        <Button
+            android:id="@+id/btnSoumettre"
+            android:layout_width="137dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="onClickBtnSoumettre"
+            android:text="Soumettre" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvSoldeCheques"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:textColor="#3F51B5" />
+
+    <TextView
+        android:id="@+id/tvSoldeEpargne"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textColor="#3F51B5" />
+</LinearLayout>
