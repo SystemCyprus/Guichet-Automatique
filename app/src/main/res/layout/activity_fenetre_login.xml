@@ -20,7 +20,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="florin" />
+            android:selectAllOnFocus="true" />
 
         <EditText
             android:id="@+id/txtNip"
@@ -29,7 +29,7 @@
             android:ems="10"
             android:inputType="textPassword"
             android:password="true"
-            android:text="florin" />
+            android:selectAllOnFocus="true" />
     </LinearLayout>
 
     <Button

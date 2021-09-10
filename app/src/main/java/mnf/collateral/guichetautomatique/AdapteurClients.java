@@ -1,3 +1,8 @@
+/*
+    Projet guichet automatique
+    Nicolae-Florin Munteanu
+    Christian Toumie
+*/
 package mnf.collateral.guichetautomatique;
 
 import android.content.Context;
@@ -10,6 +15,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+// adapteur pour pouvoir mettre les infos de la liste,
+// dans un view qu'on poura mettre dans une liste en changant les infos pour chaque item
 public class AdapteurClients extends ArrayAdapter<ClasseClient> {
     private ArrayList<ClasseClient> alClients;
     private Context context;
@@ -44,7 +51,6 @@ public class AdapteurClients extends ArrayAdapter<ClasseClient> {
             String strPrenom = res.getString(R.string.strPrenom) + " " + client.getPrenom();
             tvPrenom.setText(strPrenom);
         }
-
         return view;
     }
 

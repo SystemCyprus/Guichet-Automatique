@@ -1,3 +1,8 @@
+/*
+    Projet guichet automatique
+    Nicolae-Florin Munteanu
+    Christian Toumie
+*/
 package mnf.collateral.guichetautomatique;
 
 import android.app.Application;
@@ -8,26 +13,31 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 public class Guichet extends Application{
-    public static Guichet instanceGuichet = null;
+    // pour avoir un singleton
+    private static Guichet instanceGuichet = null;
     public static synchronized Guichet getInstance(){
+        if (instanceGuichet == null)
+            instanceGuichet = new Guichet();
         return instanceGuichet;
     }
-
+    // listes des comptes
     private static final ArrayList<ClasseClient> listeClients = new ArrayList<>();
     private static final ArrayList<ClasseCompte> comptesCheques = new ArrayList<>();
     private static final ArrayList<ClasseCompte> comptesEpargne = new ArrayList<>();
 
+    // pour acceder aux listes, des getters
+    public static ArrayList<ClasseClient> getListeClients(){
+        return listeClients;
+    }
     public static ArrayList<ClasseCompte> getComptesCheques(){
         return comptesCheques;
     }
     public static ArrayList<ClasseCompte> getComptesEpargne(){
         return comptesEpargne;
     }
-    public static ArrayList<ClasseClient> getListeClients(){
-        return listeClients;
-    }
 
-    public Guichet() {
+    private Guichet() {
+        // population des listes avec qqes items chaque
         listeClients.add( new ClasseClient("Himrane", "Naïm", "Android", "Admin"));
         listeClients.add( new ClasseClient("Munteanu", "Florin", "florin", "florin"));
         listeClients.add( new ClasseClient("Toumie", "Christian", "christian", "christian"));
@@ -44,6 +54,7 @@ public class Guichet extends Application{
         comptesEpargne.add(new ClasseEpargne("felicien", "7774", 2107.35));
     }
 
+    // methode pour valider un username et un nip
     public boolean ValiderUtilisateur(String username, String nip){
         boolean valide = false;
         for (ClasseClient client : listeClients) {
@@ -54,10 +65,11 @@ public class Guichet extends Application{
         return valide;
     }
 
-    public Bundle GetBundle(String user, String nip){
+    // methode pour mettre les infos qu'on veut passer a l'ecran principal dans un bundle
+    public Bundle ChercherBundle(String user, String nip){
         Bundle ceBundle = new Bundle();
         for (ClasseClient c : listeClients)
-        {
+        {   // le nom et prenom viennent de la classe client
             if (c.getUsername().equalsIgnoreCase(user) && c.getNumeroNIP().equalsIgnoreCase(nip))
             {
                 ceBundle.putString("Nom", c.getNom());
@@ -83,14 +95,7 @@ public class Guichet extends Application{
         return ceBundle;
     }
 
-    public double RetraitCheque(String nip, double montant){
-        return 0.00;
-    }
-
-    public double RetraitEpargne(String nip, double montant){
-        return 0.00;
-    }
-
+    // mise a jour d'un compte de cheque
     public void setCheques(String numeroCompte,double solde){
         for (ClasseCompte c : comptesCheques)
         {
@@ -100,6 +105,7 @@ public class Guichet extends Application{
         }
     }
 
+    // misa a jur d'un compte epargne
     public void setEpargne(String numeroCompte, double solde){
         for (ClasseCompte c : comptesEpargne)
         {
@@ -109,7 +115,11 @@ public class Guichet extends Application{
         }
     }
 
-    public boolean paiementInterets(){
-        return true;
+    // fonction pour faire le paiement d'interets
+    public static void paiementInterets(){
+        for (ClasseCompte c : comptesEpargne)
+        {
+            ((ClasseEpargne)c).ajouterInterets();
+        }
     }
 }

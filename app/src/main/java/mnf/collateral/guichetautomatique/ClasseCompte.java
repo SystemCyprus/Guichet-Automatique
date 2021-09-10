@@ -1,5 +1,13 @@
+/*
+    Projet guichet automatique
+    Nicolae-Florin Munteanu
+    Christian Toumie
+*/
 package mnf.collateral.guichetautomatique;
 
+
+// classe compte, pour effectuer diverses operations sur un compte en particulier
+// ces informations sont valides pour touss les types de compte heritant de cette classe
 public class ClasseCompte {
     protected String numeroNip;
     protected String numeroCompte;
@@ -20,7 +28,6 @@ public class ClasseCompte {
         return numeroCompte;
     }
 
-
     public double getSolde() {
         return this.solde;
     }
@@ -29,11 +36,4 @@ public class ClasseCompte {
         solde = montant;
     }
 
-    public void retrait(double montant, String typeCompte) {
-        solde -= montant;
-    }
-
-    public void depot(double montant, String typeCompte) {
-        solde += montant;
-    }
 }

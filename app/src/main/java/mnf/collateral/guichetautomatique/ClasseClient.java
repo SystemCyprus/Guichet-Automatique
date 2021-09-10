@@ -1,7 +1,13 @@
+/*
+    Projet guichet automatique
+    Nicolae-Florin Munteanu
+    Christian Toumie
+*/
 package mnf.collateral.guichetautomatique;
 
 import android.os.Bundle;
 
+// classe definit nos objets clients, et nous fournit des methodes pour acceder et manipuler ses proprietes
 public class ClasseClient {
     private String nom;
     private String prenom;
